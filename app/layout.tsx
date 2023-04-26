@@ -4,6 +4,7 @@ import { Poppins } from 'next/font/google'
 import Navbar from './components/navbar'
 import Heading from './components/heading'
 import SocialMedia from './components/socialMedia'
+import About from './components/about'
 
 const poppins = Poppins({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -43,6 +44,7 @@ export default function RootLayout({
         <Navbar />
         <Heading />
         <SocialMedia />
+        <About />
         {children}
       </body>
     </html>

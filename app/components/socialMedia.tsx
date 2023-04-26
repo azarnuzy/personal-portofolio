@@ -12,7 +12,7 @@ const content: string[] = [
 export default function SocialMedia() {
   return (
     <div className='container flex justify-between'>
-      <div className='fixed left-8 items-center bottom-0 flex flex-col justify-center'>
+      <aside className='fixed left-8 items-center bottom-0 flex flex-col justify-center'>
         {content.map((item: string, i: number) => (
           <a
             href='#'
@@ -28,14 +28,14 @@ export default function SocialMedia() {
           </a>
         ))}
         <div className='h-[120px] w-[1px] bg-light-gray'></div>
-      </div>
-      <div className='fixed right-8 flex flex-col items-center bottom-0'>
+      </aside>
+      <aside className='fixed right-8 flex flex-col items-center bottom-0'>
         <span className='transform rotate-90 absolute text-dark-gray tracking-widest -translate-y-36'>
           sekarmadu99@gmail.com
         </span>
 
         <div className='block h-[150px] w-[1px] bg-light-gray'></div>
-      </div>
+      </aside>
     </div>
   )
 }

@@ -46,6 +46,7 @@ function Heading() {
           alt='Polygon Luminary'
           width={521}
           height={449}
+          priority
         />
       </div>
     </div>
