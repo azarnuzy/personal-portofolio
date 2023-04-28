@@ -23,7 +23,7 @@ const content: Content = {
 
 function Heading() {
   return (
-    <div className='container flex justify-between mt-[43px]'>
+    <section className='container flex justify-between mt-[43px]'>
       <div className='relative z-10 flex flex-col w-full md:w-3/5 gap-1 pl-16'>
         <h3 className='text-primary tracking-widest'>{content.intro}</h3>
         <h1 className='font-extrabold text-light-gray text-[51px] mb-0'>
@@ -35,7 +35,7 @@ function Heading() {
         <p className='text-dark-gray'>{content.description}</p>
         <a
           href='/newest_CV.pdf'
-          className='w-fit outline-none bg-transparent border-solid text-primary border-primary border-[1px] rounded-md py-2 px-4 mt-8'
+          className='w-fit outline-none bg-transparent border-solid text-primary border-primary border-[1px] rounded-md py-2 px-8 mt-8'
         >
           Download CV
         </a>
@@ -49,7 +49,7 @@ function Heading() {
           priority
         />
       </div>
-    </div>
+    </section>
   )
 }
 

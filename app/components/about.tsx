@@ -25,7 +25,7 @@ const content: { description: string[]; techs: string[] } = {
 
 function About() {
   return (
-    <div className='container'>
+    <section className='container'>
       <div className=' flex justify-between items-center'>
         <div className='w-[60%] flex flex-col pl-16'>
           <div className='flex gap-5  items-center mb-5'>
@@ -80,7 +80,7 @@ function About() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 
