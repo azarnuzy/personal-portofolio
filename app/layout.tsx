@@ -8,6 +8,7 @@ import About from './components/about'
 import Experiences from './components/experiences'
 import Projects from './components/projects'
 import Contact from './components/contact'
+import Footer from './components/footer'
 
 const poppins = Poppins({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -54,6 +55,7 @@ export default function RootLayout({
         <Experiences />
         <Projects />
         <Contact />
+        <Footer />
         {children}
       </body>
     </html>
