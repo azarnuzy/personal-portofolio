@@ -40,7 +40,7 @@ function Heading() {
           Download CV
         </a>
       </div>
-      <div className='absolute top-24 -right-20 sm:relative z-0 transform -translate-x-20 opacity-50 sm:opacity-100'>
+      <div className='absolute  top-24 -right-20 sm:top-0 sm:right-0 sm:relative z-0 transform -translate-x-20 opacity-50 sm:opacity-100'>
         <Image
           src={'/polygon.svg'}
           alt='Polygon Luminary'

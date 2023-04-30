@@ -25,9 +25,9 @@ const content: { description: string[]; techs: string[] } = {
 
 function About() {
   return (
-    <section className='container'>
-      <div className=' flex justify-between items-center'>
-        <div className='w-[60%] flex flex-col pl-16'>
+    <section className='container mt-32 sm:mt-1'>
+      <div className=' sm:flex justify-between items-center'>
+        <div className='w-full sm:w-[60%] flex flex-col px-4 sm:pl-16'>
           <div className='flex gap-5  items-center mb-5'>
             <h2
               className='title min-w-fit'
@@ -46,14 +46,14 @@ function About() {
             </p>
           ))}
         </div>
-        <div className='w-[40%] p-10 justify-center flex'>
+        <div className='w-full sm:w-[40%] p-10 justify-center flex'>
           <div className='max-w-[230px] max-h-[260px] relative object-cover object-center'>
             <Image
               src={'/women.svg'}
               alt='My Image'
               width={230}
               height={260}
-              className='object-cover transform -translate-x-3 rounded-lg h-[260px]'
+              className='object-cover transform -translate-x-3 rounded-lg w-full h-[260px]'
             />
             <div className='transform  absolute top-0 w-[230px] h-[260px] -translate-x-3 border-solid border-primary rounded-lg bg-primary opacity-40 hover:opacity-0 transition duration-300 ease-in-out border-[1px]'></div>
             <div className='transform translate-y-3 absolute top-0 w-[230px] h-[260px] -z-10 border-solid border-primary rounded-lg bg-transparent border-[1px]'></div>
