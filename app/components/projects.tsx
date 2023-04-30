@@ -63,7 +63,7 @@ const projects: Projects[] = [
 function Projects() {
   return (
     <div
-      id='#projects'
+      id='projects'
       className='container relative'
     >
       <div className='mx-16 flex gap-5  items-center mb-5'>
