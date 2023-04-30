@@ -129,7 +129,7 @@ function Experiences() {
       className='container mt-8'
       id='experiences'
     >
-      <div className='mx-16 flex gap-5  items-center'>
+      <div className='mx-4 sm:mx-16 flex gap-5  items-center'>
         <h2
           className='title min-w-fit'
           id='about'
@@ -138,7 +138,7 @@ function Experiences() {
         </h2>
         <div className='horizontal-line'></div>
       </div>
-      <div className='mt-4 overflow-hidden h-[310px] relative gap-16 mx-24'>
+      <div className='mt-4 overflow-hidden h-[70vh] sm:h-[310px] relative gap-16 mx-6 sm:mx-24'>
         {content.map((item, i) => (
           <div
             className='flex'
@@ -169,7 +169,7 @@ function Experiences() {
               </div>
             </div>
             <div
-              className={`w-1/2 absolute top-0 right-0  ${
+              className={`w-full sm:w-1/2 absolute top-60 right-0  ${
                 item.active
                   ? 'opacity-100 transition-opacity duration-500 ease-in-out'
                   : 'opacity-0 max-w-0 max-h-0'

@@ -47,13 +47,13 @@ function About() {
           ))}
         </div>
         <div className='w-full sm:w-[40%] p-10 justify-center flex'>
-          <div className='max-w-[230px] max-h-[260px] relative object-cover object-center'>
+          <div className='w-[230px] max-h-[260px] relative object-cover object-center'>
             <Image
               src={'/women.svg'}
               alt='My Image'
               width={230}
               height={260}
-              className='object-cover transform -translate-x-3 rounded-lg w-full h-[260px]'
+              className='object-cover transform -translate-x-3 rounded-lg min-w-[230px] h-[260px]'
             />
             <div className='transform  absolute top-0 w-[230px] h-[260px] -translate-x-3 border-solid border-primary rounded-lg bg-primary opacity-40 hover:opacity-0 transition duration-300 ease-in-out border-[1px]'></div>
             <div className='transform translate-y-3 absolute top-0 w-[230px] h-[260px] -z-10 border-solid border-primary rounded-lg bg-transparent border-[1px]'></div>
@@ -61,10 +61,10 @@ function About() {
         </div>
       </div>
       <div className='horizontal-line mx-auto'></div>
-      <div className='mt-5 px-16'>
+      <div className='mt-5 px-4 sm:px-16'>
         <h4 className='text-light-gray text-xl'>Tech Stack</h4>
         <p className='text-dark-gray text-lg'>Languages and libraries I Know</p>
-        <div className='mt-5 flex gap-5 justify-center'>
+        <div className='mt-5 flex flex-wrap gap-5 justify-center'>
           {content.techs.map((item, i) => (
             <div
               className='bg-light-gray p-2 w-16 h-16 rounded-xl shadow-xl'
