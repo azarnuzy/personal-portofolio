@@ -6,7 +6,7 @@ function Contact() {
       className='container'
       id='contact'
     >
-      <div className='mx-16 flex gap-5  items-center mb-5'>
+      <div className='mx-4 sm:mx-16 flex gap-5  items-center mb-5'>
         <h2
           className='title min-w-fit'
           id='about'
@@ -15,8 +15,8 @@ function Contact() {
         </h2>
         <div className='horizontal-line'></div>
       </div>
-      <form className='mx-16 bg-dark-blue-2 p-4 rounded-xl flex gap-4 flex-wrap justify-between'>
-        <div className='w-[45%]'>
+      <form className='mx-4 sm:mx-16 bg-dark-blue-2 p-4 rounded-xl flex gap-4 flex-wrap justify-between'>
+        <div className='w-full sm:w-[45%]'>
           <label
             htmlFor='name'
             className='font-bold text-lg mb-2 inline-block text-white'
@@ -32,7 +32,7 @@ function Contact() {
             />
           </div>
         </div>
-        <div className='w-[45%]'>
+        <div className='w-full sm:w-[45%]'>
           <label
             htmlFor='email'
             className='font-bold text-lg mb-2 inline-block text-white'

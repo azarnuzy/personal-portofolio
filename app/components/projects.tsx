@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react'
 
@@ -61,12 +61,33 @@ const projects: Projects[] = [
 ]
 
 function Projects() {
+  const [slidesPerView, setSlidesPerView] = useState<number>(1)
+
+  useEffect(() => {
+    const setSlides = () => {
+      if (window.innerWidth >= 1024) {
+        setSlidesPerView(3)
+      } else if (window.innerWidth >= 768) {
+        setSlidesPerView(2)
+      } else {
+        setSlidesPerView(1)
+      }
+    }
+
+    setSlides()
+
+    window.addEventListener('resize', setSlides)
+
+    return () => {
+      window.removeEventListener('resize', setSlides)
+    }
+  }, [])
   return (
     <div
       id='projects'
       className='container relative'
     >
-      <div className='mx-16 flex gap-5  items-center mb-5'>
+      <div className='mx-4 sm:mx-16 flex gap-5  items-center mb-5'>
         <h2
           className='title min-w-fit'
           id='about'
@@ -76,7 +97,7 @@ function Projects() {
         <div className='horizontal-line'></div>
       </div>
       <Swiper
-        slidesPerView={3}
+        slidesPerView={slidesPerView}
         spaceBetween={30}
         navigation={true}
         modules={[Navigation]}

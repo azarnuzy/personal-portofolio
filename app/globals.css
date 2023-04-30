@@ -60,3 +60,29 @@
   font-size: 24px !important;
   font-weight: bolder;
 }
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .swiper {
+    padding: 0 20px !important;
+  }
+  .swiper-button-next {
+    right: 30px !important;
+  }
+
+  .swiper-button-prev {
+    left: 30px !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .swiper {
+    padding: 0 40px !important;
+  }
+  .swiper-button-next {
+    right: 20px !important;
+  }
+
+  .swiper-button-prev {
+    left: 20px !important;
+  }
+}
