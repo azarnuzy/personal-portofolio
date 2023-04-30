@@ -23,8 +23,8 @@ const content: Content = {
 
 function Heading() {
   return (
-    <section className='container flex justify-between mt-[43px]'>
-      <div className='relative z-10 flex flex-col w-full md:w-3/5 gap-1 pl-16'>
+    <section className='container sm:flex justify-between mt-[43px]'>
+      <div className='relative px-4 z-10 flex flex-col w-full md:w-3/5 gap-1 sm:pl-16'>
         <h3 className='text-primary tracking-widest'>{content.intro}</h3>
         <h1 className='font-extrabold text-light-gray text-[51px] mb-0'>
           {content.title}
@@ -40,7 +40,7 @@ function Heading() {
           Download CV
         </a>
       </div>
-      <div className='relative z-0 transform -translate-x-20'>
+      <div className='absolute top-24 -right-20 sm:relative z-0 transform -translate-x-20 opacity-50 sm:opacity-100'>
         <Image
           src={'/polygon.svg'}
           alt='Polygon Luminary'

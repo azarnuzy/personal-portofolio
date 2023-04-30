@@ -11,7 +11,7 @@ const content: string[] = [
 
 export default function SocialMedia() {
   return (
-    <aside className='container relative flex justify-between'>
+    <aside className='hidden sm:flex container relative  justify-between'>
       <div className='fixed left-8 items-center bottom-0 flex flex-col justify-center'>
         {content.map((item: string, i: number) => (
           <a
