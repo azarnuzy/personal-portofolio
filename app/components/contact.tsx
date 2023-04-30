@@ -63,6 +63,14 @@ function Contact() {
             ></textarea>
           </div>
         </div>
+        <div className='w-full flex justify-end'>
+          <button
+            type='submit'
+            className='bg-primary outline-none px-6 py-1 rounded-md font-bold text-dark-blue'
+          >
+            Send
+          </button>
+        </div>
       </form>
     </div>
   )
