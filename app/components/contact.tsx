@@ -1,6 +1,44 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
 
 function Contact() {
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+  const [status, setStatus] = useState('')
+
+  React.useEffect(() => {
+    if (status.length > 0) {
+      setTimeout(() => {
+        setStatus('')
+        setName('')
+        setEmail('')
+        setMessage('')
+      }, 5000)
+    }
+  }, [status])
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    try {
+      const response = await fetch('/api/sendEmail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, message }),
+      })
+
+      const data = await response.json()
+
+      setStatus(data.message)
+    } catch (error) {
+      console.error(error)
+      setStatus('Something went wrong')
+    }
+  }
   return (
     <div
       className='container'
@@ -15,7 +53,10 @@ function Contact() {
         </h2>
         <div className='horizontal-line'></div>
       </div>
-      <form className='mx-4 sm:mx-16 bg-dark-blue-2 p-4 rounded-xl flex gap-4 flex-wrap justify-between'>
+      <form
+        onSubmit={handleSubmit}
+        className='mx-4 sm:mx-16 bg-dark-blue-2 p-4 rounded-xl flex gap-4 flex-wrap justify-between'
+      >
         <div className='w-full sm:w-[45%]'>
           <label
             htmlFor='name'
@@ -29,6 +70,8 @@ function Contact() {
               id='name'
               className='outline-none w-full bg-transparent text-slate-50 font-bold'
               placeholder='John Doe'
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
           </div>
         </div>
@@ -45,6 +88,8 @@ function Contact() {
               id='email'
               className='outline-none w-full bg-transparent text-white font-bold'
               placeholder='johndoe@gmail.com'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
         </div>
@@ -60,6 +105,8 @@ function Contact() {
               id='message'
               className='outline-none w-full bg-transparent text-white font-bold '
               placeholder='Write your messages...'
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
             ></textarea>
           </div>
         </div>

@@ -54,7 +54,7 @@ function Experiences() {
         </h2>
         <div className='horizontal-line'></div>
       </div>
-      <div className='mt-4 overflow-hidden h-[70vh] sm:h-[310px] relative gap-16 mx-6 sm:mx-24'>
+      <div className='mt-4 overflow-hidden h-[80vh] sm:h-[310px] relative gap-16 mx-6 sm:mx-24'>
         {content.map((item, i) => (
           <div
             className='flex'

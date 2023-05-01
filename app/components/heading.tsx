@@ -17,10 +17,10 @@ function Heading() {
     <section className='container sm:flex justify-between mt-[43px]'>
       <div className='relative px-4 z-10 flex flex-col w-full md:w-3/5 gap-1 sm:pl-16'>
         <h3 className='text-primary tracking-widest'>{heading.intro}</h3>
-        <h1 className='font-extrabold text-light-gray text-[51px] mb-0'>
+        <h1 className='font-extrabold text-light-gray text-[43px] sm:text-[51px] mb-0'>
           {heading.title}
         </h1>
-        <h2 className='font-extrabold text-dark-gray text-[45px]'>
+        <h2 className='font-extrabold text-dark-gray text-[32px] sm:text-[45px]'>
           {heading.subtitle[0]}
         </h2>
         <p className='text-dark-gray'>{heading.description}</p>
