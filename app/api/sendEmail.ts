@@ -3,17 +3,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import nodemailer from 'nodemailer'
 
-type Data = {
-  message: string
-}
-
-const emailEnv = process.env.MY_EMAIL
-const pass = process.env.MY_PASSWORD
-
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
-) {
+export default async function POST(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Method not allowed' })
   }
@@ -22,10 +12,10 @@ export default async function handler(
 
   // Create a nodemailer transporter with your email service credentials
   const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    service: 'Gmail',
     auth: {
-      user: emailEnv,
-      pass: pass,
+      user: 'your-email@gmail.com',
+      pass: 'your-email-password',
     },
   })
 
@@ -33,7 +23,7 @@ export default async function handler(
     // Send the email using nodemailer
     await transporter.sendMail({
       from: email,
-      to: process.env.NEXT_PUBLIC_MY_EMAIL,
+      to: 'recipient-email@example.com',
       subject: `New message from ${name}`,
       text: message,
     })

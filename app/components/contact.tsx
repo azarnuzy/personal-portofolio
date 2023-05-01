@@ -8,17 +8,6 @@ function Contact() {
   const [message, setMessage] = useState('')
   const [status, setStatus] = useState('')
 
-  React.useEffect(() => {
-    if (status.length > 0) {
-      setTimeout(() => {
-        setStatus('')
-        setName('')
-        setEmail('')
-        setMessage('')
-      }, 5000)
-    }
-  }, [status])
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
@@ -31,9 +20,9 @@ function Contact() {
         body: JSON.stringify({ name, email, message }),
       })
 
-      const data = await response.json()
+      // const data = await response.json()
 
-      setStatus(data.message)
+      // setStatus(data.message)
     } catch (error) {
       console.error(error)
       setStatus('Something went wrong')
@@ -72,6 +61,7 @@ function Contact() {
               placeholder='John Doe'
               value={name}
               onChange={(e) => setName(e.target.value)}
+              required
             />
           </div>
         </div>
@@ -90,6 +80,7 @@ function Contact() {
               placeholder='johndoe@gmail.com'
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
           </div>
         </div>
@@ -107,6 +98,7 @@ function Contact() {
               placeholder='Write your messages...'
               value={message}
               onChange={(e) => setMessage(e.target.value)}
+              required
             ></textarea>
           </div>
         </div>
