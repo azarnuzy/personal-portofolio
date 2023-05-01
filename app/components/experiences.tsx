@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import { dataExperiences } from '../utils/data'
 
 type Experiences = {
   title: string
@@ -13,92 +14,7 @@ type Experiences = {
   active: boolean
 }
 
-const experiences: Experiences[] = [
-  {
-    title: 'Software Engineer Intern - GITS Indonesia',
-    detail: {
-      position: 'Software Engineer Intern',
-      place: 'GITS Indonesia',
-      time: 'January - Now 2023',
-      jobdesc: [
-        'Developed, maintained, and shipped production code for client websites primarily using HTML, CSS, Sass, JavaScript, and jQuery',
-        'Performed quality assurance tests on various sites to ensure cross-browser compatibility and mobile responsiveness',
-        'Clients included JetBlue, Lovesac, U.S. Cellular, U.S. Department of Defense, and more',
-      ],
-    },
-    active: true,
-  },
-  {
-    title: 'Assisten Lecturer OOP - UPI',
-    detail: {
-      position: 'Assisten Lecturer OOP',
-      place: 'Universitas Pendidikan Indonesia',
-      time: 'February - September 2022',
-      jobdesc: [
-        'Developed, maintained, and shipped production code for client websites primarily using HTML, CSS, Sass, JavaScript, and jQuery',
-        'Performed quality assurance tests on various sites to ensure cross-browser compatibility and mobile responsiveness',
-        'Clients included JetBlue, Lovesac, U.S. Cellular, U.S. Department of Defense, and more',
-      ],
-    },
-    active: false,
-  },
-  {
-    title: 'Software Engineer Intern - GITS Indonesia',
-    detail: {
-      position: 'Software Engineer Intern',
-      place: 'GITS Indonesia',
-      time: 'January - Now 2023',
-      jobdesc: [
-        'Developed, maintained, and shipped production code for client websites primarily using HTML, CSS, Sass, JavaScript, and jQuery',
-        'Performed quality assurance tests on various sites to ensure cross-browser compatibility and mobile responsiveness',
-        'Clients included JetBlue, Lovesac, U.S. Cellular, U.S. Department of Defense, and more',
-      ],
-    },
-    active: false,
-  },
-  {
-    title: 'Assisten Lecturer OOP - UPI',
-    detail: {
-      position: 'Assisten Lecturer OOP',
-      place: 'Universitas Pendidikan Indonesia',
-      time: 'February - September 2022',
-      jobdesc: [
-        'Developed, maintained, and shipped production code for client websites primarily using HTML, CSS, Sass, JavaScript, and jQuery',
-        'Performed quality assurance tests on various sites to ensure cross-browser compatibility and mobile responsiveness',
-        'Clients included JetBlue, Lovesac, U.S. Cellular, U.S. Department of Defense, and more',
-      ],
-    },
-    active: false,
-  },
-  {
-    title: 'Software Engineer Intern - GITS Indonesia',
-    detail: {
-      position: 'Software Engineer Intern',
-      place: 'GITS Indonesia',
-      time: 'January - Now 2023',
-      jobdesc: [
-        'Developed, maintained, and shipped production code for client websites primarily using HTML, CSS, Sass, JavaScript, and jQuery',
-        'Performed quality assurance tests on various sites to ensure cross-browser compatibility and mobile responsiveness',
-        'Clients included JetBlue, Lovesac, U.S. Cellular, U.S. Department of Defense, and more',
-      ],
-    },
-    active: false,
-  },
-  {
-    title: 'Assisten Lecturer OOP - UPI',
-    detail: {
-      position: 'Assisten Lecturer OOP',
-      place: 'Universitas Pendidikan Indonesia',
-      time: 'February - September 2022',
-      jobdesc: [
-        'Developed, maintained, and shipped production code for client websites primarily using HTML, CSS, Sass, JavaScript, and jQuery',
-        'Performed quality assurance tests on various sites to ensure cross-browser compatibility and mobile responsiveness',
-        'Clients included JetBlue, Lovesac, U.S. Cellular, U.S. Department of Defense, and more',
-      ],
-    },
-    active: false,
-  },
-]
+const experiences: Experiences[] = dataExperiences
 
 function Experiences() {
   const [content, setContent] = useState(experiences)
@@ -169,7 +85,7 @@ function Experiences() {
               </div>
             </div>
             <div
-              className={`w-full sm:w-1/2 absolute top-60 right-0  ${
+              className={`w-full sm:w-1/2 absolute sm:top-0 top-60 right-0  ${
                 item.active
                   ? 'opacity-100 transition-opacity duration-500 ease-in-out'
                   : 'opacity-0 max-w-0 max-h-0'

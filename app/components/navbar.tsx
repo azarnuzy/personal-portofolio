@@ -2,16 +2,15 @@
 
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
+import { dataNavbar } from '../utils/data'
 
-type Content = {
+type Navbar = {
   title: string
   menuList: string[]
 }
 
-const content: Content = {
-  title: '<Sekar/>',
-  menuList: ['About', 'Experiences', 'Projects', 'Contact'],
-}
+const navbar: Navbar = dataNavbar
+
 function Navbar() {
   const [isSticky, setIsSticky] = useState<boolean>(false)
   const [isActive, setIsActive] = useState<boolean>(false)
@@ -35,14 +34,16 @@ function Navbar() {
   return (
     <nav
       className={`container ${
-        isSticky ? 'fixed z-30 top-0 left-0 w-full bg-dark-blue shadow-lg' : ''
+        isSticky
+          ? 'fixed z-30 top-0 left-1/2 w-full -translate-x-1/2 transform bg-dark-blue shadow-lg'
+          : ''
       }`}
     >
       <div className='flex justify-between items-center px-2 sm:px-0'>
-        <h1 className='text-2xl font-bold text-primary'>{content.title}</h1>
+        <h1 className='text-2xl font-bold text-primary'>{navbar.title}</h1>
         {/* desktop navbar */}
         <ul className='hidden sm:flex gap-8 text-light-gray list-none p-0 items-center'>
-          {content.menuList.map((item: string, i: number) => (
+          {navbar.menuList.map((item: string, i: number) => (
             <a
               href={`#${item.toLowerCase()}`}
               key={i}
@@ -84,7 +85,7 @@ function Navbar() {
             />
           </div>
           <ul className='flex h-[60%] flex-col justify-center gap-8 text-light-gray list-none p-0 items-center'>
-            {content.menuList.map((item: string, i: number) => (
+            {navbar.menuList.map((item: string, i: number) => (
               <a
                 href={`#${item.toLowerCase()}`}
                 key={i}

@@ -11,6 +11,7 @@ import 'swiper/css/navigation'
 // import required modules
 import { Navigation } from 'swiper'
 import Image from 'next/image'
+import { dataProjects } from '../utils/data'
 
 type Projects = {
   thumbnail: string
@@ -21,44 +22,7 @@ type Projects = {
   resourceLink?: string
 }
 
-const projects: Projects[] = [
-  {
-    thumbnail: 'chatbot.jpg',
-    title: 'API Chatbot Library UPI',
-    description:
-      'Make API Chatbot library UPI to provide some information and some activity to make student more easier to access some feature in library UPI',
-    technology: ['Express Js', 'Docker'],
-    productLink: 'perpustakaan.upi.edu:8080',
-    resourceLink: 'github.com',
-  },
-  {
-    thumbnail: 'chatbot.jpg',
-    title: 'API Chatbot Library UPI',
-    description:
-      'Make API Chatbot library UPI to provide some information and some activity to make student more easier to access some feature in library UPI',
-    technology: ['Express Js', 'Docker'],
-    productLink: 'perpustakaan.upi.edu:8080',
-    resourceLink: 'github.com',
-  },
-  {
-    thumbnail: 'chatbot.jpg',
-    title: 'API Chatbot Library UPI',
-    description:
-      'Make API Chatbot library UPI to provide some information and some activity to make student more easier to access some feature in library UPI',
-    technology: ['Express Js', 'Docker'],
-    productLink: 'perpustakaan.upi.edu:8080',
-    resourceLink: 'github.com',
-  },
-  {
-    thumbnail: 'chatbot.jpg',
-    title: 'API Chatbot Library UPI',
-    description:
-      'Make API Chatbot library UPI to provide some information and some activity to make student more easier to access some feature in library UPI',
-    technology: ['Express Js', 'Docker'],
-    productLink: 'perpustakaan.upi.edu:8080',
-    resourceLink: 'github.com',
-  },
-]
+const projects: Projects[] = dataProjects
 
 function Projects() {
   const [slidesPerView, setSlidesPerView] = useState<number>(1)
@@ -139,7 +103,7 @@ function Projects() {
                     <a href={`${item.productLink}`}>
                       <Image
                         src={`/logos_link.svg`}
-                        alt='Logo Github'
+                        alt='Logo External Link'
                         width={24}
                         height={24}
                       />
