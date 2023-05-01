@@ -26,14 +26,14 @@ export async function POST(req: Request) {
     await transporter.sendMail({
       from: email,
       to: process.env.MY_EMAIL,
-      subject: `New message from ${name}`,
+      subject: `New message from ${email} - ${name}`,
       text: message,
     })
 
-    NextResponse.json({ message: 'Email sent successfully' })
+    return NextResponse.json({ message: 'Email sent successfully' })
     // res.status(200).json({ message: 'Email sent successfully' })
   } catch (error) {
-    NextResponse.json({ message: 'Something went wrong' })
+    return NextResponse.json({ message: 'Something went wrong' })
     // res.status(500).json({ message: 'Something went wrong' })
   }
 }

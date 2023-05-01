@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import Swal from 'sweetalert2'
 
 function Contact() {
   const [name, setName] = useState('')
@@ -20,9 +21,17 @@ function Contact() {
         body: JSON.stringify({ name, email, message }),
       })
 
-      // const data = await response.json()
-
-      // setStatus(data.message)
+      const res = await response.json()
+      Swal.fire({
+        position: 'top-end',
+        title: res.message,
+        showConfirmButton: false,
+        timer: 1500,
+      })
+      setStatus(res.message)
+      setName('')
+      setEmail('')
+      setMessage('')
     } catch (error) {
       console.error(error)
       setStatus('Something went wrong')
