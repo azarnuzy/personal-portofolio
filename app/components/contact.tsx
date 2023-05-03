@@ -47,7 +47,8 @@ function Contact(props: Mode) {
           className='title min-w-fit'
           id='about'
         >
-          <span className='text-primary'>04. </span> Let's Make Something Great
+          <span className='text-primary'>04. </span> Let&apos;s Make Something
+          Great
         </h2>
         <div className='horizontal-line'></div>
       </div>

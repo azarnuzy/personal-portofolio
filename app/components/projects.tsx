@@ -56,7 +56,7 @@ function Projects(props: Mode) {
           className='title min-w-fit'
           id='about'
         >
-          <span className='text-primary'>03. </span> Something I've Built
+          <span className='text-primary'>03. </span> Something I&apos;ve Built
         </h2>
         <div className='horizontal-line'></div>
       </div>
@@ -88,7 +88,12 @@ function Projects(props: Mode) {
                 <div className='flex justify-between'>
                   <div className='flex gap-3'>
                     {item.technology.map((tech, i) => (
-                      <p className='text-dark-gray'>{tech}</p>
+                      <p
+                        className='text-dark-gray'
+                        key={i}
+                      >
+                        {tech}
+                      </p>
                     ))}
                   </div>
                   <div className='flex gap-2'>

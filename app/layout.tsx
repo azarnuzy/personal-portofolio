@@ -11,19 +11,27 @@ import Experiences from './components/experiences'
 import Projects from './components/projects'
 import Contact from './components/contact'
 import Footer from './components/footer'
-import { dataMetaData } from './utils/data'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const poppins = Poppins({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
   subsets: ['latin'],
 })
 
-export const metadata = dataMetaData
-
-let mode = false
-if (localStorage.getItem('mode')) {
-  mode = JSON.parse(localStorage.getItem('mode')!)
+export const metadata = {
+  title: 'My Website',
+  description:
+    'Welcome to my personal site! This is where you can learn more about me, my interests, and my work. Explore my portfolio, blog, and more to get a better sense of who I am and what I do.',
+  keywords:
+    'personal, portfolio, blog, about me, interests, work, projects, skills, experience, education, achievements, contact, homepage',
+  author: 'John Doe',
+  image: '/images/homepage.png',
+  url: 'https://www.your-url.com',
+  twitterUsername: '@yourtwitterusername',
+  siteName: 'Personal Site',
+  siteLanguage: 'en-US',
+  siteLocale: 'id_ID',
+  type: 'website',
 }
 
 export default function RootLayout({
@@ -31,8 +39,13 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const [isDark, setIsDark] = useState(mode)
+  const [isDark, setIsDark] = useState(false)
 
+  useEffect(() => {
+    if (localStorage.getItem('mode')) {
+      setIsDark(JSON.parse(localStorage.getItem('mode')!))
+    }
+  }, [])
   return (
     <html
       lang='en'

@@ -18,6 +18,7 @@ export default function SocialMedia(props: Mode) {
             href={`${item.link}`}
             target='_blank'
             className='mb-4'
+            key={i}
           >
             <Image
               src={`/${item.logo}`}
