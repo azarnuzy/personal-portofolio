@@ -12,7 +12,11 @@ type Heading = {
 
 const heading: Heading = dataHeading
 
-function Heading() {
+interface Mode {
+  isDark: boolean
+}
+
+function Heading(props: Mode) {
   return (
     <section className='container sm:flex justify-between mt-[43px]'>
       <div className='relative px-4 z-10 flex flex-col w-full md:w-3/5 gap-1 sm:pl-16'>

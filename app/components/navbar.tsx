@@ -9,9 +9,13 @@ type Navbar = {
   menuList: string[]
 }
 
+interface Mode {
+  isDark: boolean
+}
+
 const navbar: Navbar = dataNavbar
 
-function Navbar() {
+function Navbar(props: Mode) {
   const [isSticky, setIsSticky] = useState<boolean>(false)
   const [isActive, setIsActive] = useState<boolean>(false)
 
@@ -33,13 +37,13 @@ function Navbar() {
 
   return (
     <nav
-      className={`container ${
+      className={` ${
         isSticky
           ? 'fixed z-30 top-0 left-1/2 w-full -translate-x-1/2 transform bg-dark-blue shadow-lg'
           : ''
       }`}
     >
-      <div className='flex justify-between items-center px-2 sm:px-0'>
+      <div className='flex justify-between items-center px-2 sm:px-8 sm:py-3'>
         <h1 className='text-2xl font-bold text-primary'>{navbar.title}</h1>
         {/* desktop navbar */}
         <ul className='hidden sm:flex gap-8 text-light-gray list-none p-0 items-center'>
@@ -52,7 +56,10 @@ function Navbar() {
               {item}
             </a>
           ))}
-          <li className='flex items-center w-10 h-10 p-1 justify-center bg-light-gray rounded-[10px]'>
+          <li
+            className='flex items-center w-10 h-10 p-1 justify-center bg-light-gray rounded-[10px] overflow-hidden'
+            onClick={() => {}}
+          >
             <Image
               src={'/logos_moon.svg'}
               alt='Sun Logo'

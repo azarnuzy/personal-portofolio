@@ -1,3 +1,5 @@
+'use client'
+
 import Head from 'next/head'
 import './globals.css'
 import { Poppins } from 'next/font/google'
@@ -9,26 +11,19 @@ import Experiences from './components/experiences'
 import Projects from './components/projects'
 import Contact from './components/contact'
 import Footer from './components/footer'
+import { dataMetaData } from './utils/data'
+import { useState } from 'react'
 
 const poppins = Poppins({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
   subsets: ['latin'],
 })
 
-export const metadata = {
-  title: 'Sekar Madu K | Home',
-  description:
-    'Welcome to my personal site! This is where you can learn more about me, my interests, and my work. Explore my portfolio, blog, and more to get a better sense of who I am and what I do.',
-  keywords:
-    'personal, portfolio, blog, about me, interests, work, projects, skills, experience, education, achievements, contact, homepage',
-  author: 'Sekar Madu K',
-  image: '/images/homepage.jpg',
-  url: 'https://www.sekarmaduk.com/',
-  twitterUsername: '@yourtwitterusername',
-  siteName: 'Sekar Madu K',
-  siteLanguage: 'en-US',
-  siteLocale: 'id_ID',
-  type: 'website',
+export const metadata = dataMetaData
+
+let mode = false
+if (localStorage.getItem('mode')) {
+  mode = JSON.parse(localStorage.getItem('mode')!)
 }
 
 export default function RootLayout({
@@ -36,6 +31,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const [isDark, setIsDark] = useState(mode)
+
   return (
     <html
       lang='en'
@@ -48,14 +45,14 @@ export default function RootLayout({
         />
       </Head>
       <body className={poppins.className + ' bg-dark-blue h-screen'}>
-        <Navbar />
-        <Heading />
-        <SocialMedia />
-        <About />
-        <Experiences />
-        <Projects />
-        <Contact />
-        <Footer />
+        <Navbar isDark={isDark} />
+        <Heading isDark={isDark} />
+        <SocialMedia isDark={isDark} />
+        <About isDark={isDark} />
+        <Experiences isDark={isDark} />
+        <Projects isDark={isDark} />
+        <Contact isDark={isDark} />
+        <Footer isDark={isDark} />
         {children}
       </body>
     </html>

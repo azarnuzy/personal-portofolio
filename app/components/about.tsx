@@ -6,7 +6,7 @@ import { dataAbout } from '../utils/data'
 const about: { description: string[]; techs: string[]; image: string } =
   dataAbout
 
-function About() {
+function About(props: Mode) {
   return (
     <section className='container mt-32 sm:mt-1'>
       <div className=' sm:flex justify-between items-center'>

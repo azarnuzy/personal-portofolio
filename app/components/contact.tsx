@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import Swal from 'sweetalert2'
 
-function Contact() {
+function Contact(props: Mode) {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
