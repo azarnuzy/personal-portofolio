@@ -1,5 +1,3 @@
-'use client'
-
 import Head from 'next/head'
 import './globals.css'
 import { Poppins } from 'next/font/google'
@@ -39,13 +37,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const [isDark, setIsDark] = useState(false)
-
-  useEffect(() => {
-    if (localStorage.getItem('mode')) {
-      setIsDark(JSON.parse(localStorage.getItem('mode')!))
-    }
-  }, [])
+  // const [isDark, setIsDark] = useState(false)
   return (
     <html
       lang='en'
@@ -58,14 +50,6 @@ export default function RootLayout({
         />
       </Head>
       <body className={poppins.className + ' bg-dark-blue h-screen'}>
-        <Navbar isDark={isDark} />
-        <Heading isDark={isDark} />
-        <SocialMedia isDark={isDark} />
-        <About isDark={isDark} />
-        <Experiences isDark={isDark} />
-        <Projects isDark={isDark} />
-        <Contact isDark={isDark} />
-        <Footer isDark={isDark} />
         {children}
       </body>
     </html>
