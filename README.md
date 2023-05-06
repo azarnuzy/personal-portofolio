@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Installation
 
-## Getting Started
+To use this personal website project, you will need to have Node.js and npm installed on your computer.
 
-First, run the development server:
+1. Clone this repository:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+```
+git clone https://github.com/azarnuzy/personal-portofolio
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Navigate into the project directory:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+cd personal-portofolio
+```
 
-[http://localhost:3000/api/hello](http://localhost:3000/api/hello) is an endpoint that uses [Route Handlers](https://beta.nextjs.org/docs/routing/route-handlers). This endpoint can be edited in `app/api/hello/route.ts`.
+3. Install the dependencies:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```
+npm install
+```
 
-## Learn More
+# Configuration
 
-To learn more about Next.js, take a look at the following resources:
+1. Create a `.env.local` file in the root of the project with the following environment variables:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+MY_EMAIL=[your-email]
+MY_PASSWORD=[your-email-password]
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Note: replace `[your-email]` and `[your-email-password]` with your own email and password, respectively. These are used to send messages from the contact form.
 
-## Deploy on Vercel
+# Usage
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+To run the development server:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
+npm run dev
+```
+
+The website should be available at `http://localhost:3000/`
+
+# Customization
+
+## Content
+
+To change the content of the website, navigate to the `utils` folder and update the appropriate files
+
+## Styling
+
+This project uses Tailwind CSS for styling. To customize the styles, you can edit the `tailwind.config.js` file.
+
+## Deployment
+
+This project can be easily deployed to Netlify with Github integration. Follow these steps:
+
+1. Create a new site in Netlify.
+2. Connect your Github repository to Netlify.
+3. Configure the build settings:
+
+   - Build command: `npm run build`
+   - Publish directory: `out`
+
+4. Set the environment variables in Netlify:
+
+   - MY_EMAIL: [your-email]
+   - MY_PASSWORD: [your-email-password]
+
+5. Deploy the site.
+
+Note: replace `[your-email]` and `[your-email-password]` with your own email and password, respectively.
+
+# Contributing
+
+If you would like to contribute to this project, please follow these steps:
+
+1. Fork the repository.
+
+2. Create a new branch:
+
+   ```
+   git checkout -b my-feature-branch
+   ```
+
+3. Make your changes and commit them:
+
+   ```
+   git commit -m "Add my feature"
+   ```
+
+4. Push to the branch:
+
+   ```
+   git push origin my-feature-branch
+   ```
+
+5. Open a pull request on GitHub.
+
+# Credits
+
+This project was built with Next.js, TypeScript, and Tailwind CSS.
+
+# License
+
+This project is licensed under the MIT license. See the `LICENSE` file for details.
