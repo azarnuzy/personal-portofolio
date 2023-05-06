@@ -67,7 +67,10 @@ function Navbar() {
             <li
               className={`flex items-center w-10 h-10 p-1 justify-center dark:bg-dark-blue-2 bg-light-gray
              rounded-[10px] overflow-hidden cursor-pointer relative`}
-              onClick={() => setIsDark((prev) => !prev)}
+              onClick={() => {
+                localStorage.setItem('mode', JSON.stringify(!isDark))
+                setIsDark((prev) => !prev)
+              }}
             >
               <Image
                 src={'/logos_moon.svg'}
@@ -138,7 +141,10 @@ function Navbar() {
               ))}
               <li
                 className='flex items-center w-10 h-10 p-1 justify-center bg-light-gray rounded-[10px] overflow-hidden relative'
-                onClick={() => setIsDark((prev) => !prev)}
+                onClick={() => {
+                  localStorage.setItem('mode', JSON.stringify(!isDark))
+                  setIsDark((prev) => !prev)
+                }}
               >
                 <Image
                   src={'/logos_moon.svg'}

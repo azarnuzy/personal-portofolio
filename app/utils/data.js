@@ -2,9 +2,9 @@
 // the file in the public folder
 const dataAbout = {
   description: [
-    'Hello! My name is Brittany and I enjoy creating things that live on the internet. My interest in web development started back in 2012 when I decided to try editing custom Tumblr themes — turns out hacking together a custom reblog button taught me a lot about HTML & CSS!',
-    "Fast-forward to today, and I've had the privilege of working at an advertising agency, a start-up, a huge corporation, and a student-led design studio. My main focus these days is building accessible, inclusive products and digital experiences at Upstatement for a variety of clients. ",
-    'I also recently launched a course that covers everything you need to build a web app with the Spotify API using Node & React.',
+    "Hello there! My name is Sekar and I'm passionate about crafting engaging and dynamic digital experiences. My journey into the world of web development began in 2010 when I started tinkering with customizing WordPress themes - little did I know that this would ignite a passion for HTML and CSS that has carried me through my career.",
+    "Since then, I've had the opportunity to work at various companies, from small start-ups to large corporations, and have honed my skills in front-end development and UX design. My current focus is on developing innovative and inclusive web products at a leading tech company.",
+    "Outside of work, I enjoy sharing my knowledge with others and have even created a popular online course that teaches students how to build web apps using cutting-edge technologies like React and GraphQL. I believe that the web has the power to bring people together and I'm excited to continue to be a part of that journey.",
   ],
   techs: [
     'html',

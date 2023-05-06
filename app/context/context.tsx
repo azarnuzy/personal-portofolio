@@ -7,8 +7,14 @@ type themeContextType = {
   setIsDark: React.Dispatch<React.SetStateAction<boolean>>
 }
 
+let tempMode = false
+const mode = localStorage.getItem('mode')
+if (mode !== null) {
+  tempMode = JSON.parse(mode)
+}
+
 const ThemeContext = createContext<themeContextType>({
-  isDark: false,
+  isDark: tempMode,
   setIsDark: () => {},
 })
 
@@ -17,7 +23,7 @@ type Props = {
 }
 
 export const ThemeContextProvider = ({ children }: Props) => {
-  const [isDark, setIsDark] = useState<boolean>(false)
+  const [isDark, setIsDark] = useState<boolean>(tempMode)
 
   return (
     <ThemeContext.Provider value={{ isDark, setIsDark }}>
