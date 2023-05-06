@@ -3,21 +3,19 @@
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import { dataNavbar } from '../utils/data'
+import { useThemeContext } from '../context/context'
 
 type Navbar = {
   title: string
   menuList: string[]
 }
 
-interface Mode {
-  isDark: boolean
-}
-
 const navbar: Navbar = dataNavbar
 
-function Navbar(props: Mode) {
+function Navbar() {
   const [isSticky, setIsSticky] = useState<boolean>(false)
   const [isActive, setIsActive] = useState<boolean>(false)
+  const { isDark, setIsDark } = useThemeContext()
 
   useEffect(() => {
     const handleScroll = () => {

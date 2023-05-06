@@ -24,7 +24,7 @@ type Projects = {
 
 const projects: Projects[] = dataProjects
 
-function Projects(props: Mode) {
+function Projects() {
   const [slidesPerView, setSlidesPerView] = useState<number>(1)
 
   useEffect(() => {

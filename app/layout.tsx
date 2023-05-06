@@ -1,15 +1,7 @@
 import Head from 'next/head'
 import './globals.css'
 import { Poppins } from 'next/font/google'
-import Navbar from './components/navbar'
-import Heading from './components/heading'
-import SocialMedia from './components/socialMedia'
-import About from './components/about'
-import Experiences from './components/experiences'
-import Projects from './components/projects'
-import Contact from './components/contact'
-import Footer from './components/footer'
-import { useEffect, useState } from 'react'
+import { ThemeContextProvider } from './context/context'
 
 const poppins = Poppins({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -50,7 +42,7 @@ export default function RootLayout({
         />
       </Head>
       <body className={poppins.className + ' bg-dark-blue h-screen'}>
-        {children}
+        <ThemeContextProvider>{children}</ThemeContextProvider>
       </body>
     </html>
   )

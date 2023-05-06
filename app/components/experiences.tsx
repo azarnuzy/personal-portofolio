@@ -16,7 +16,7 @@ type Experiences = {
 
 const experiences: Experiences[] = dataExperiences
 
-function Experiences(props: Mode) {
+function Experiences() {
   const [content, setContent] = useState(experiences)
 
   const limitChars = (str: string, maxLength: number): string => {

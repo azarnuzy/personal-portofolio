@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Footer(props: Mode) {
+function Footer() {
   return (
     <a
       href='https://github.com/azarnuzy/personal-portofolio'

@@ -9,7 +9,7 @@ type SocialMedia = {
 
 const socialMedia: { data: SocialMedia[]; email: string } = dataSocialMedia
 
-export default function SocialMedia(props: Mode) {
+export default function SocialMedia() {
   return (
     <aside className='hidden sm:flex container relative  justify-between'>
       <div className='fixed z-10 left-8 items-center bottom-0 flex flex-col justify-center'>
