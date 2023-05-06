@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import './globals.css'
 import { Poppins } from 'next/font/google'
-import { ThemeContextProvider, useThemeContext } from './context/context'
+import { ThemeContextProvider } from './context/context'
 
 const poppins = Poppins({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],

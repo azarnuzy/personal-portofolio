@@ -115,7 +115,7 @@ function Contact() {
         <div className='w-full flex justify-end'>
           <button
             type='submit'
-            className='bg-primary outline-none px-6 py-1 rounded-md font-bold text-dark-blue'
+            className='bg-primary dark:bg-[#a0a0a08a]   outline-none px-6 py-1 rounded-md font-bold text-dark-blue'
           >
             Send
           </button>
