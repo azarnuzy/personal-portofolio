@@ -4,7 +4,7 @@ import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import { dataNavbar } from '../utils/data'
 import { useThemeContext } from '../context/context'
-
+import { useInView } from 'react-intersection-observer'
 type Navbar = {
   title: string
   menuList: string[]
@@ -13,6 +13,10 @@ type Navbar = {
 const navbar: Navbar = dataNavbar
 
 function Navbar() {
+  const { ref, inView } = useInView({
+    threshold: 0.2, // Change this value as needed
+    triggerOnce: true,
+  })
   const [isSticky, setIsSticky] = useState<boolean>(false)
   const [isActive, setIsActive] = useState<boolean>(false)
   const { isDark, setIsDark } = useThemeContext()
@@ -36,11 +40,12 @@ function Navbar() {
   return (
     <>
       <nav
+        ref={ref}
         className={` ${
           isSticky
             ? 'fixed z-30 top-0 left-1/2 w-full -translate-x-1/2 transform bg-dark-blue dark:bg-white shadow-lg'
             : ''
-        }`}
+        } ${inView ? 'animate__fadeIn animate__slow' : ''}`}
       >
         <div className='flex justify-between items-center px-2 sm:px-8 sm:py-3'>
           <h1 className='text-2xl font-bold text-primary dark:text-dark-blue-2'>

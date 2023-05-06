@@ -2,13 +2,16 @@
 
 import React, { useState } from 'react'
 import Swal from 'sweetalert2'
-
+import { useInView } from 'react-intersection-observer'
 function Contact() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
   const [status, setStatus] = useState('')
-
+  const { ref, inView } = useInView({
+    threshold: 0.2, // Change this value as needed
+    triggerOnce: true,
+  })
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
@@ -39,7 +42,10 @@ function Contact() {
   }
   return (
     <div
-      className='container'
+      ref={ref}
+      className={`container animate__animated ${
+        inView ? 'animate__fadeInUp animate__slow' : ''
+      }`}
       id='contact'
     >
       <div className='mx-4 sm:mx-16 flex gap-5  items-center mb-5'>

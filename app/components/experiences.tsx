@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import { dataExperiences } from '../utils/data'
+import { useInView } from 'react-intersection-observer'
 
 type Experiences = {
   title: string
@@ -18,6 +19,10 @@ const experiences: Experiences[] = dataExperiences
 
 function Experiences() {
   const [content, setContent] = useState(experiences)
+  const { ref, inView } = useInView({
+    threshold: 0.2, // Change this value as needed
+    triggerOnce: true,
+  })
 
   const limitChars = (str: string, maxLength: number): string => {
     if (str.length > maxLength) {
@@ -40,9 +45,13 @@ function Experiences() {
     })
     setContent(updatedExperiences)
   }
+
   return (
     <section
-      className='container mt-8'
+      ref={ref}
+      className={`container mt-8 animate__animated ${
+        inView ? 'animate__fadeIn animate__slow' : ''
+      }`}
       id='experiences'
     >
       <div className='mx-4 sm:mx-16 flex gap-5  items-center'>

@@ -9,6 +9,8 @@ import Contact from './components/contact'
 import Footer from './components/footer'
 import { useThemeContext } from './context/context'
 
+import 'animate.css'
+
 export default function Home() {
   const { isDark } = useThemeContext()
 

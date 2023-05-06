@@ -5,7 +5,7 @@ function Footer() {
     <a
       href='https://github.com/azarnuzy/personal-portofolio'
       target='_blank'
-      className='container flex flex-col justify-center items-center py-5'
+      className={`container flex flex-col justify-center items-center py-5 `}
     >
       <h5 className='font-bold text-sm text-light-gray dark:text-dark-blue'>
         Copyright © 2023

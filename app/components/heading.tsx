@@ -3,6 +3,7 @@ import React from 'react'
 import { dataHeading } from '../utils/data'
 import { useThemeContext } from '../context/context'
 
+import { useInView } from 'react-intersection-observer'
 type Heading = {
   intro: string
   title: string
@@ -20,7 +21,9 @@ interface Mode {
 function Heading() {
   const { isDark } = useThemeContext()
   return (
-    <section className='container sm:flex justify-between mt-[43px]'>
+    <section
+      className={`container sm:flex justify-between mt-[43px]  animate__ animate__animated animate__fadeIn animate__slow `}
+    >
       <div className='relative px-4 z-10 flex flex-col w-full md:w-3/5 gap-1 sm:pl-16'>
         <h3 className='text-primary tracking-widest dark:text-dark-blue dark:font-medium'>
           {heading.intro}

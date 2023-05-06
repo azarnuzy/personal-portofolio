@@ -13,6 +13,8 @@ import { Navigation } from 'swiper'
 import Image from 'next/image'
 import { dataProjects } from '../utils/data'
 
+import { useInView } from 'react-intersection-observer'
+
 type Projects = {
   thumbnail: string
   title: string
@@ -25,6 +27,10 @@ type Projects = {
 const projects: Projects[] = dataProjects
 
 function Projects() {
+  const { ref, inView } = useInView({
+    threshold: 0.2, // Change this value as needed
+    triggerOnce: true,
+  })
   const [slidesPerView, setSlidesPerView] = useState<number>(1)
 
   useEffect(() => {
@@ -48,8 +54,11 @@ function Projects() {
   }, [])
   return (
     <div
+      ref={ref}
       id='projects'
-      className='container relative'
+      className={`container relative animate__ animate__animated ${
+        inView ? 'animate__fadeInUp animate__slow' : ''
+      }`}
     >
       <div className='mx-4 sm:mx-16 flex gap-5  items-center mb-5'>
         <h2

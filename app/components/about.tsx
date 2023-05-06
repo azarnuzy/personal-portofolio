@@ -2,13 +2,24 @@ import Image from 'next/image'
 import React from 'react'
 
 import { dataAbout } from '../utils/data'
+import { useInView } from 'react-intersection-observer'
 
 const about: { description: string[]; techs: string[]; image: string } =
   dataAbout
 
 function About() {
+  const { ref, inView } = useInView({
+    threshold: 0.2, // Change this value as needed
+    triggerOnce: true,
+  })
+
   return (
-    <section className='container mt-32 sm:mt-1'>
+    <section
+      ref={ref}
+      className={`container mt-32 sm:mt-1 animate__ animate__animated ${
+        inView ? 'animate__fadeInUp animate__slow' : ''
+      }`}
+    >
       <div className=' sm:flex justify-between items-center'>
         <div className='w-full sm:w-[60%] flex flex-col px-4 sm:pl-16'>
           <div className='flex gap-5  items-center mb-5'>

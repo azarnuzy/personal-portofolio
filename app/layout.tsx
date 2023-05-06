@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import './globals.css'
+import 'animate.css/animate.min.css'
 import { Poppins } from 'next/font/google'
 import { ThemeContextProvider } from './context/context'
 
