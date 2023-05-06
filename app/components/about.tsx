@@ -17,7 +17,7 @@ function About() {
     <section
       ref={ref}
       className={`container mt-32 sm:mt-1 animate__ animate__animated ${
-        inView ? 'animate__fadeInUp animate__slow' : ''
+        inView ? 'animate__fadeIn animate__slow' : ''
       }`}
     >
       <div className=' sm:flex justify-between items-center'>

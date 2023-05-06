@@ -47,7 +47,7 @@ function Navbar() {
             : ''
         } ${inView ? 'animate__fadeIn animate__slow' : ''}`}
       >
-        <div className='flex justify-between items-center px-2 sm:px-8 sm:py-3'>
+        <div className='flex justify-between items-center px-4 sm:px-8 py-3'>
           <h1 className='text-2xl font-bold text-primary dark:text-dark-blue-2'>
             {navbar.title}
           </h1>
@@ -89,14 +89,26 @@ function Navbar() {
               />
             </li>
           </ul>
-          <Image
-            src={'/logos_menu.svg'}
-            alt='Menu Logo'
-            width={35}
-            height={35}
-            className='sm:hidden'
-            onClick={() => setIsActive((isActive) => true)}
-          />
+          {isDark ? (
+            <Image
+              src={'/logos_menu_light.svg'}
+              alt='Menu Logo'
+              width={35}
+              height={35}
+              className='sm:hidden'
+              onClick={() => setIsActive((isActive) => true)}
+            />
+          ) : (
+            <Image
+              src={'/logos_menu.svg'}
+              alt='Menu Logo'
+              width={35}
+              height={35}
+              className='sm:hidden'
+              onClick={() => setIsActive((isActive) => true)}
+            />
+          )}
+
           {/* Mobile navbar */}
           <div
             className={`fixed flex flex-col bg-dark-blue-2 text-primary max-w-[300px] transform  gap-8 h-screen w-full top-0 z-50 px-4 pt-3 right-0 duration-500 ease-in-out flex-between ${
@@ -124,12 +136,27 @@ function Navbar() {
                   {item}
                 </a>
               ))}
-              <li className='flex items-center w-10 h-10 p-1 justify-center bg-light-gray rounded-[10px]'>
+              <li
+                className='flex items-center w-10 h-10 p-1 justify-center bg-light-gray rounded-[10px] overflow-hidden relative'
+                onClick={() => setIsDark((prev) => !prev)}
+              >
                 <Image
                   src={'/logos_moon.svg'}
                   alt='Sun Logo'
+                  className={`absolute ${
+                    isDark ? 'translate-y-full' : 'translate-y-0'
+                  } duration-300  transform transition-transform ease-in-out`}
                   width={35}
                   height={35}
+                />
+                <Image
+                  src={'/logos_sun.svg'}
+                  alt='Sun Logo'
+                  className={`absolute ${
+                    !isDark ? 'translate-y-[200%]' : 'translate-y-0'
+                  } duration-300  transform transition-transform ease-in-out`}
+                  width={32}
+                  height={32}
                 />
               </li>
             </ul>

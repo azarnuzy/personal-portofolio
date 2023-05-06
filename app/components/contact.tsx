@@ -44,7 +44,7 @@ function Contact() {
     <div
       ref={ref}
       className={`container animate__animated ${
-        inView ? 'animate__fadeInUp animate__slow' : ''
+        inView ? 'animate__fadeIn animate__slow' : ''
       }`}
       id='contact'
     >

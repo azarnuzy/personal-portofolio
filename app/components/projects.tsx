@@ -57,7 +57,7 @@ function Projects() {
       ref={ref}
       id='projects'
       className={`container relative animate__ animate__animated ${
-        inView ? 'animate__fadeInUp animate__slow' : ''
+        inView ? 'animate__fadeIn animate__slow' : ''
       }`}
     >
       <div className='mx-4 sm:mx-16 flex gap-5  items-center mb-5'>
