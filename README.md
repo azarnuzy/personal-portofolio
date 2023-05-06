@@ -1,3 +1,9 @@
+# My Awesome Next.js Project
+
+This is my awesome Next.js project that I built using TypeScript and TailwindCSS. It's a personal website where I showcase my portfolio and contact information.
+
+![Preview of My Awesome Next.js Project](preview.gif)
+
 # Installation
 
 To use this personal website project, you will need to have Node.js and npm installed on your computer.
