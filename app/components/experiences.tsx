@@ -50,7 +50,8 @@ function Experiences() {
           className='title min-w-fit'
           id='about'
         >
-          <span className='text-primary'>02. </span>Experiences
+          <span className='text-primary dark:text-dark-blue-2'>02. </span>
+          Experiences
         </h2>
         <div className='horizontal-line'></div>
       </div>
@@ -62,7 +63,7 @@ function Experiences() {
           >
             <div className='max-h-fit min-w-fit gap-3 flex'>
               <div className='flex gap-3 h-fit'>
-                <div className='min-h-fit w-[1px] bg-light-gray'></div>
+                <div className='min-h-fit w-[1px] bg-light-gray dark:bg-dark-blue-2'></div>
                 <div className='relative'>
                   <div
                     className='relative cursor-pointer'
@@ -70,14 +71,14 @@ function Experiences() {
                     onClick={() => handleClick(i)}
                   >
                     <h5
-                      className={`tracking-wide text-[18px] text-dark-gray py-1 transition-colors duration-500 ease-in-out ${
+                      className={`tracking-wide text-[18px] text-dark-gray dark:text-dark-blue py-1 transition-colors duration-500 ease-in-out ${
                         item.active ? 'active-experience' : ''
                       }`}
                     >
                       {limitChars(item.title, 24)}
                     </h5>
                     {item.active === true && (
-                      <div className='absolute -left-[13.8px] min-h-[110%] top-0 rounded-sm w-[3px] bg-primary'></div>
+                      <div className='absolute -left-[13.8px] min-h-[110%] top-0 rounded-sm w-[3px] dark:bg-dark-blue-2 bg-primary'></div>
                     )}
                   </div>
                   {/* ))} */}
@@ -92,14 +93,16 @@ function Experiences() {
               } `}
               key={i}
             >
-              <h3 className='font-bold text-xl text-light-gray mb-2'>
+              <h3 className='font-bold text-xl text-light-gray dark:text-dark-blue-2 mb-2'>
                 {item.detail.position} @
-                <span className='text-primary'>{item.detail.place}</span>
+                <span className='text-primary dark:text-dark-blue'>
+                  {item.detail.place}
+                </span>
               </h3>
-              <span className='text-dark-gray text-lg mb-2 block'>
+              <span className='text-dark-gray dark:text-dark-blue text-lg mb-2 block'>
                 {item.detail.time}
               </span>
-              <ul className='text-dark-gray '>
+              <ul className='text-dark-gray dark:text-dark-blue'>
                 {item.detail.jobdesc.map((job, i) => (
                   <li
                     className='list-disc list-outside '

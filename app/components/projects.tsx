@@ -56,7 +56,8 @@ function Projects() {
           className='title min-w-fit'
           id='about'
         >
-          <span className='text-primary'>03. </span> Something I&apos;ve Built
+          <span className='text-primary dark:text-dark-blue-2'>03. </span>{' '}
+          Something I&apos;ve Built
         </h2>
         <div className='horizontal-line'></div>
       </div>
@@ -69,7 +70,7 @@ function Projects() {
       >
         {projects.map((item, i) => (
           <SwiperSlide
-            className='w-1/3 bg-dark-blue-2 text-light-gray rounded-[15px] shadow-lg'
+            className='w-1/3 bg-dark-blue-2 dark:bg-light-white dark:text-dark-blue  text-light-gray rounded-[15px] shadow-lg'
             key={i}
           >
             <div className='w-full'>
@@ -81,10 +82,12 @@ function Projects() {
                 className='rounded-t-[15px] w-full h-[150px] mb-3 object-cover object-top'
               />
               <div className='px-4 py-2'>
-                <h5 className='text-lg text-light-gray font-bold mb-2'>
+                <h5 className='text-lg text-light-gray dark:text-dark-blue  font-bold mb-2'>
                   {item.title}
                 </h5>
-                <p className='text-light-gray mb-2'>{item.description}</p>
+                <p className='text-light-gray dark:text-dark-blue  mb-2'>
+                  {item.description}
+                </p>
                 <div className='flex justify-between'>
                   <div className='flex gap-3'>
                     {item.technology.map((tech, i) => (

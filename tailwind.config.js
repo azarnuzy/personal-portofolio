@@ -20,7 +20,7 @@ module.exports = {
         'dark-blue': '#031D32',
         'dark-blue-2': '#213343',
         'dark-blue-3': '#AAF1E1',
-        'light-white': '#f2f2f2',
+        'light-white': '#eee',
       },
     },
   },

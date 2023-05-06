@@ -7,11 +7,11 @@
 }
 
 .title {
-  @apply text-light-gray font-bold text-2xl sm:text-[30px];
+  @apply text-light-gray dark:text-dark-blue font-bold text-2xl sm:text-[30px];
 }
 
 .horizontal-line {
-  @apply w-[90%] bg-dark-gray h-[1px];
+  @apply w-[90%] bg-dark-gray dark:text-dark-blue h-[1px];
 }
 
 .active-experience {

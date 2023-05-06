@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import './globals.css'
 import { Poppins } from 'next/font/google'
-import { ThemeContextProvider } from './context/context'
+import { ThemeContextProvider, useThemeContext } from './context/context'
 
 const poppins = Poppins({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -29,7 +29,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  // const [isDark, setIsDark] = useState(false)
   return (
     <html
       lang='en'
@@ -41,9 +40,9 @@ export default function RootLayout({
           href='/logo.ico'
         />
       </Head>
-      <body className={poppins.className + ' bg-dark-blue h-screen'}>
-        <ThemeContextProvider>{children}</ThemeContextProvider>
-      </body>
+      <ThemeContextProvider>
+        <body className={poppins.className + ' h-screen'}>{children}</body>
+      </ThemeContextProvider>
     </html>
   )
 }

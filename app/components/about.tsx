@@ -13,16 +13,17 @@ function About() {
         <div className='w-full sm:w-[60%] flex flex-col px-4 sm:pl-16'>
           <div className='flex gap-5  items-center mb-5'>
             <h2
-              className='title min-w-fit'
+              className='title  min-w-fit'
               id='about'
             >
-              <span className='text-primary'>01. </span>About Me
+              <span className='text-primary dark:text-dark-blue-2'>01. </span>
+              About Me
             </h2>
             <div className='horizontal-line'></div>
           </div>
           {about.description.map((item, i) => (
             <p
-              className='text-dark-gray block mb-5'
+              className='text-dark-gray dark:text-dark-blue block mb-5'
               key={i}
             >
               {item}
@@ -38,19 +39,23 @@ function About() {
               height={260}
               className='object-cover transform -translate-x-3 rounded-lg min-w-[230px] h-[260px]'
             />
-            <div className='transform  absolute top-0 w-[230px] h-[260px] -translate-x-3 border-solid border-primary rounded-lg bg-primary opacity-40 hover:opacity-0 transition duration-300 ease-in-out border-[1px]'></div>
-            <div className='transform translate-y-3 absolute top-0 w-[230px] h-[260px] -z-10 border-solid border-primary rounded-lg bg-transparent border-[1px]'></div>
+            <div className='transform  absolute top-0 w-[230px] h-[260px] -translate-x-3 border-solid dark:border-dark-blue-2 border-primary rounded-lg bg-primary dark:bg-dark-blue-2 opacity-40 hover:opacity-0 transition duration-300 ease-in-out border-[1px]'></div>
+            <div className='transform translate-y-3 absolute top-0 w-[230px] h-[260px] -z-10 border-solid dark:border-dark-blue border-primary rounded-lg bg-transparent border-[1px]'></div>
           </div>
         </div>
       </div>
       <div className='horizontal-line mx-auto'></div>
       <div className='mt-5 px-4 sm:px-16'>
-        <h4 className='text-light-gray text-xl'>Tech Stack</h4>
-        <p className='text-dark-gray text-lg'>Languages and libraries I Know</p>
+        <h4 className='text-light-gray text-xl dark:text-dark-blue-2'>
+          Tech Stack
+        </h4>
+        <p className='text-dark-gray dark:text-dark-blue text-lg'>
+          Languages and libraries I Know
+        </p>
         <div className='mt-5 flex flex-wrap gap-5 justify-center'>
           {about.techs.map((item, i) => (
             <div
-              className='bg-light-gray p-2 w-16 h-16 rounded-xl shadow-xl'
+              className='bg-light-gray dark:bg-light-white p-2 w-16 h-16 rounded-xl shadow-xl'
               key={i}
             >
               <Image
